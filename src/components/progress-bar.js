@@ -1,26 +1,35 @@
-import {LitElement, html, css} from 'lit-element';
+import {LitElement, html} from 'lit-element';
 
 class ProgressBar extends LitElement
 {
-  static get styles()
-  {
-    // Write styles in standard CSS
-    return css`
-    `;
-  }
-
   static get properties()
   {
     return {
-      width: Number,
-      color: String,
-      colorback: String
+      width:
+      {
+        type: Number
+      },
+      color:
+      {
+        type: String
+      },
+      colorback:
+      {
+        type: String
+      },
+      display:
+      {
+        type: Boolean
+      }
     }
   }  
 
   render()
   {
-    return html`
+    let output = '';
+    if(this.display)
+    {
+      output = html`
       <style>
       :host > div
       {
@@ -38,6 +47,8 @@ class ProgressBar extends LitElement
         <div></div>
       </div>
     `;
+    }
+    return output;
   }
 
   constructor()

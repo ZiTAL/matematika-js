@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -rf dist
+mkdir -p dist
+cp node_modules/normalize.css/normalize.css dist/
+cp src/index.html dist/index.html
