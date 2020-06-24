@@ -51,15 +51,15 @@ class RandomNearNumbersClass
     
     get()
     {
-        let result = {}, min, max, amount = 0, r;
+        let response = {}, min, max, amount = 0, r;
 
         amount = (this._params.amount)?this._params.amount:0;
         amount = (max-min<amount)?max-min:amount;        
 
         if(typeof this._params.value === 'number')
         {
-            min = this._params.value - this._params.amount;
-            max = this._params.value + this._params.amount;
+            min = this._getMin(this._params.value, amount, 0);
+            max = this._getMax(this._params.value, amount, this._params.value+amount);
             r = this._params.value;
         }
         else
@@ -69,13 +69,13 @@ class RandomNearNumbersClass
             r = this._random(min, max);
         }
 
-        result.value = r;
+        response.result = r;
 
         let rmin = this._getMin(r, amount, min);
         let rmax = this._getMax(r, amount, max);
 
-        let numbers = [];
-        numbers.push(r);
+        let possible_values = [];
+        possible_values.push(r);
         
         for(var i=0; i<amount; i++)
         {
@@ -84,15 +84,15 @@ class RandomNearNumbersClass
             {
                 a = this._random(rmin, rmax);
             }
-            while(numbers.includes(a));
-            numbers.push(a);
+            while(possible_values.includes(a));
+            possible_values.push(a);
         }
         
-        result.numbers = this._shuffle(numbers);
-        if(result.numbers.length===1)
-            return result.value;
+        response.possible_values = this._shuffle(possible_values);
+        if(response.possible_values.length===1)
+            return response.result;
 
-        return result;
+        return response;
     }    
 
     constructor(params)
