@@ -1,4 +1,6 @@
+import "./matematika-game.js"
 import "./progress-bar.js"
+
 import RandomNearNumbers from "../lib/random-near-numbers.js";
 
 import {LitElement, html} from 'lit-element';
