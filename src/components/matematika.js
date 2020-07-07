@@ -1,5 +1,6 @@
-import "./matematika-game.js"
 import "./progress-bar.js"
+import "./matematika-menu.js"
+import "./matematika-game.js"
 
 import RandomNearNumbers from "../lib/random-near-numbers.js";
 
@@ -67,6 +68,12 @@ class Matematika extends LitElement
     super();
     this.setProgressBar();
     this.main();
+
+    this.addEventListener('my-event', function(e)
+    {
+      console.log(e);
+      console.log('yeah');
+    });    
   }
 }
 

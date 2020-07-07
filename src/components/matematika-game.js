@@ -2,37 +2,29 @@ import {LitElement, html} from 'lit-element';
 
 class MatematikaGame extends LitElement
 {
+  static get properties()
+  {
+    return {
+      display:
+      {
+        type: String
+      }
+    }
+  }    
   render()
   {
-      let self = this;
-      let numbers = [];
-      for(let i=0; i<11; i++)
-        numbers.push(i);
-
-      return html`
-      <style>
-      :host > ul > li
+      console.log("a", this.display);
+      if(this.display==='true')
       {
-        list-style-type: none;
+        return html`
+            MATEMATIKA-GAME
+      `;
       }
-    </style>
-    <ul>
-        ${numbers.map(function(number)
-        {
-        return html`<li><button @click="${self._click}">${number}</button>`;
-        })}
-    </ul>
-    `;
   }
 
   constructor()
   {
     super();
-  }
-
-  _click(button)
-  {
-    console.log(button);
   }
 }
 
