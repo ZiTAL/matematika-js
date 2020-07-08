@@ -14,16 +14,6 @@ class MatematikaMenu extends LitElement
   render()
   {
       var self = this;
-      let myEvent = new CustomEvent('my-event',
-      { 
-        detail:
-        {
-          message: 'my-event happened.'
-        },
-        bubbles: true, 
-        composed: true
-      });      
-      this.parentNode.dispatchEvent(myEvent);
       if(this.display)
       {
         let self = this;
@@ -60,7 +50,17 @@ class MatematikaMenu extends LitElement
     button.preventDefault();
     console.log(button);
     var game = window.parseInt(button.target.innerText);
-    console.log(game);
+
+    let myEvent = new CustomEvent('matematika-create',
+    { 
+      detail:
+      {
+        game: game
+      },
+      bubbles: true, 
+      composed: true
+    });      
+    this.parentNode.dispatchEvent(myEvent);    
   }
 }
 

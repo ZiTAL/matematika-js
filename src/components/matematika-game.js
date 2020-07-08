@@ -25,6 +25,10 @@ class MatematikaGame extends LitElement
   constructor()
   {
     super();
+    this.addEventListener('matematika-game-exec', function (e)
+    {
+      console.log(e.detail.exercises);
+    });
   }
 }
 
