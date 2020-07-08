@@ -13,5 +13,5 @@ npm run build
 zerbitzaridxe martxan imintzeko:
 ```
 cd dist
-php -S localhost:8000
+php -S localhost:8000 
 ```
