@@ -7,14 +7,14 @@ class MatematikaMenu extends LitElement
     return {
       display:
       {
-        type: Boolean
+        type: String
       }
     }
   }    
   render()
   {
       var self = this;
-      if(this.display)
+      if(this.display==='true')
       {
         let self = this;
         let numbers = [];
@@ -33,8 +33,6 @@ class MatematikaMenu extends LitElement
           {
             return html`<li><button @click="${function(e){self._click(e)}}">${number}</button>`;
           })}
-          
-          <li @click="${this._click}">iban</li>
       </ul>
       `;
       }
@@ -48,7 +46,6 @@ class MatematikaMenu extends LitElement
   _click(button)
   {
     button.preventDefault();
-    console.log(button);
     var game = window.parseInt(button.target.innerText);
 
     let myEvent = new CustomEvent('matematika-create',

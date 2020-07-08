@@ -1,4 +1,5 @@
 import "./progress-bar.js"
+import "./matematika-home.js"
 import "./matematika-menu.js"
 import "./matematika-game.js"
 
@@ -40,33 +41,26 @@ class Matematika extends LitElement {
     this.progress_bar = document.querySelector('progress-bar', this);
   }
 
-  setGame() {
+  setGame()
+  {
     this.game = document.querySelector('matematika-game', this);
-  }  
-
-  main() {
-/*    
-    window.setInterval(function () {
-      let random_near_numbers = RandomNearNumbers(
-        {
-          min: 0,
-          max: 10,
-          amount: 2
-        });
-      console.log(random_near_numbers);
-    }, 1 * 1000);
-
-    this._emptyProgressBar(this.progress_bar, 20);
-*/    
   }
 
-  constructor() {
+  constructor()
+  {
     super();
+    var self = this;
+
     this.setProgressBar();
     this.setGame();
-    this.main();
 
-    this.addEventListener('matematika-create', function (e)
+    this.addEventListener('matematika-reset', function(e)
+    {
+      self.progress_bar.display = 'false';
+      self.game.display = 'false';
+    });
+
+    this.addEventListener('matematika-create', function(e)
     {
       let exercises = [];
       let one = e.detail.game;

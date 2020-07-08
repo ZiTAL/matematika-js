@@ -19,7 +19,7 @@ class ProgressBar extends LitElement
       },
       display:
       {
-        type: Boolean
+        type: String
       }
     }
   }  
@@ -27,7 +27,7 @@ class ProgressBar extends LitElement
   render()
   {
     let output = '';
-    if(this.display)
+    if(this.display==='true')
     {
       output = html`
       <style>
