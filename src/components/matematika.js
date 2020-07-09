@@ -56,8 +56,11 @@ class Matematika extends LitElement {
 
     this.addEventListener('matematika-reset', function(e)
     {
+/*      
       self.progress_bar.display = 'false';
       self.game.display = 'false';
+*/
+      window.location.reload(true);
     });
 
     this.addEventListener('matematika-create', function(e)
