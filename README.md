@@ -10,9 +10,7 @@ npm run watch
 npm run build
 ```
 
-zerbitzaridxe martxan imintzeko:
+zerbitzaridxe martxan imintzeko, php derrigorrezkue:
 ```
-cd dist
-php -S localhost:8000
+bash server.sh
 ```
-
