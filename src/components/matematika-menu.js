@@ -24,7 +24,7 @@ class MatematikaMenu extends LitElement
         <style>
         :host
         {
-          font-size: xxx-large;            
+          font-size: 5em;
         }          
         :host > ul
         {
@@ -43,7 +43,7 @@ class MatematikaMenu extends LitElement
           list-style-type: none;
           display: inline-flex;
           margin: 5px;
-          font-size: xxx-large;
+          font-size: 2em;
         }        
       </style>
       <ul>

@@ -21,7 +21,7 @@ class MatematikaHome extends LitElement
         <style>       
         :host > button
         {
-            font-size: xxx-large;
+            font-size: 5em;
             display: block;
             margin: 0 auto;
             width: 80%;
