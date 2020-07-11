@@ -22,9 +22,17 @@ class MatematikaMenu extends LitElement
   
         return html`
         <style>
+        :host > ul
+        {
+          width: 80%;
+          margin: auto;
+          margin-top: 20px;
+        }
         :host > ul > li
         {
           list-style-type: none;
+          display: inline-flex;
+          margin: 5px;
         }
       </style>
       <ul>

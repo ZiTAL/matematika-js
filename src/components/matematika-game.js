@@ -31,19 +31,45 @@ class MatematikaGame extends LitElement
         if(typeof exercise !== 'undefined')
         {
           return html`
-          <li>
-            <span>${exercise.one}</span>
-            <span>${exercise.operator}</span>
-            <span>${exercise.two}</span>
+          <style>
+          :host > div
+          {
+            text-align: center;
+            margin-top: 20px;
+          }
+          :host > div
+          {
+            text-align: center;
+            margin-top: 20px;
+          }
+          :host ul
+          {
+            text-align: center;
+            list-style-type: none;
+          }
+          :host button
+          {
+            margin: 5px;
+          }              
+          </style>          
+          <div>
             <ul>
-            ${exercise.result.possible_values.map(function(possible_value)
-            {
-              return html`
-                <li><button @click="${function(e){this._check(this.index, possible_value)}}">${possible_value}</button></li>
-              `;
-            })}
+              <li>
+                <span>${exercise.one}</span>
+                <span>${exercise.operator}</span>
+                <span>${exercise.two}</span>
+                <span> = ? </span>
+              </li>
             </ul>
-          </li>
+            <ul>
+              ${exercise.result.possible_values.map(function(possible_value)
+              {
+                return html`
+                  <li><button @click="${function(e){this._check(this.index, possible_value)}}">${possible_value}</button></li>
+                `;
+              })}
+            </ul>
+          </div>
           `;
         }
         else

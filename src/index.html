@@ -2,14 +2,35 @@
 <html>
     <head>
         <link rel="stylesheet" href="normalize.css">
+        <style>
+            h1
+            {
+                text-align: center;
+            }
+            h2
+            {
+                text-align: center;
+            }
+            #footer
+            {
+                display: flex;
+                justify-content: center;
+                margin: 1rem;
+            }
+        </style>
     </head>
     <body>
+        <h1>Matematika<h1>
+        <h2>Biderkaketak</h2>
         <matematika-js>
             <matematika-home display="true"></matematika-home>
             <progress-bar display="false" width="100" color="#4cAf50" colorback="#ddd"></progress-bar>
             <matematika-menu display="true"></matematika-menu>
             <matematika-game display="false"></matematika-game>
         </matematika-js>
+        <div id="footer">
+            <a href="https://github.com/ZiTAL/matematika-js" title="github"><img src="resources/img/github.png"></a>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>

@@ -26,7 +26,7 @@ class MatematikaHome extends LitElement
             width: 80%;
         }
       </style>
-      <button @click="${function(e){self._reset(e)}}">RESET</button>
+      <button @click="${function(e){self._reset(e)}}">HASIERA</button>
       `;
       }
   }
