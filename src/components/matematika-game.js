@@ -32,6 +32,10 @@ class MatematikaGame extends LitElement
         {
           return html`
           <style>
+          :host
+          {
+            font-size: xxx-large;            
+          }
           :host > div
           {
             text-align: center;
@@ -49,6 +53,7 @@ class MatematikaGame extends LitElement
           }
           :host button
           {
+            font-size: xxx-large;            
             margin: 5px;
           }              
           </style>          

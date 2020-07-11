@@ -22,6 +22,10 @@ class MatematikaMenu extends LitElement
   
         return html`
         <style>
+        :host
+        {
+          font-size: xxx-large;            
+        }          
         :host > ul
         {
           width: 80%;
@@ -34,6 +38,13 @@ class MatematikaMenu extends LitElement
           display: inline-flex;
           margin: 5px;
         }
+        :host > ul > li > button
+        {
+          list-style-type: none;
+          display: inline-flex;
+          margin: 5px;
+          font-size: xxx-large;
+        }        
       </style>
       <ul>
           ${numbers.map(function(number)

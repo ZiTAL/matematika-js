@@ -18,9 +18,10 @@ class MatematikaHome extends LitElement
       {
   
         return html`
-        <style>
+        <style>       
         :host > button
         {
+            font-size: xxx-large;
             display: block;
             margin: 0 auto;
             width: 80%;
