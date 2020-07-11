@@ -41,7 +41,6 @@ class MatematikaMenu extends LitElement
         :host > ul > li > button
         {
           list-style-type: none;
-          display: inline-flex;
           margin: 5px;
           font-size: 2em;
         }        

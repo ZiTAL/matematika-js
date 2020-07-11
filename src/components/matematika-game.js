@@ -53,8 +53,9 @@ class MatematikaGame extends LitElement
           }
           :host button
           {
-            font-size: 2em;
+            font-size: 1em;
             margin: 5px;
+            width: 25%;
           }              
           </style>          
           <div>
