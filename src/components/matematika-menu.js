@@ -50,6 +50,7 @@ class MatematikaMenu extends LitElement
           {
             return html`<li><button @click="${function(e){self._click(e)}}">${number}</button>`;
           })}
+          <li><button @click="${function(e){self._click(e)}}">nahastea</li>
       </ul>
       `;
       }
@@ -67,7 +68,7 @@ class MatematikaMenu extends LitElement
   _click(button)
   {
     button.preventDefault();
-    var game = window.parseInt(button.target.innerText);
+    var game = button.target.innerText;
 
     let myEvent = new CustomEvent('matematika-create',
     { 

@@ -17,9 +17,13 @@ class MatematikaGame extends LitElement
       {
         type: Number
       },
-      fail:
+      response:
       {
-        type: Number
+        type: Boolean
+      },
+      show_response:
+      {
+        type: Boolean
       }
     }
   }    
@@ -56,7 +60,20 @@ class MatematikaGame extends LitElement
             font-size: 1em;
             margin: 5px;
             width: 25%;
-          }              
+          }          
+          :host .response
+          {
+            color: white;
+            padding: 10px;
+          }           
+          :host .ondo
+          {
+            background-color: green;
+          } 
+          :host .txarto
+          {
+            background-color: red;
+          }   
           </style>          
           <div>
             <ul>
@@ -75,6 +92,12 @@ class MatematikaGame extends LitElement
                 `;
               })}
             </ul>
+            ${this.show_response && this.response ?
+              html`<span class="response ondo">Ondo!</span>` :
+              html``}
+            ${this.show_response && !this.response ?
+              html`<span class="response txarto">Txarto...</span>` :
+              html``}              
           </div>
           `;
         }
@@ -85,23 +108,44 @@ class MatematikaGame extends LitElement
 
   _check(index, possible_value)
   {
-    if(this.exercises[index].result.result===possible_value)
+    let self = this;
+    if(self.exercises[index].result.result===possible_value)
     {
-      this.exercises.splice(index, 1);
-      this.exercises = [...this.exercises];
+      self._showResult(true, function()
+      {
+        self.exercises.splice(index, 1);
+        self.exercises = [...self.exercises];
+      });
     }
     else
     {
-      this.index++;
-      if(typeof this.exercises[this.index+1] === 'undefined')
-        this.index = 0;
+      self._showResult(false, function()
+      {
+        self.index++;
+        if(typeof self.exercises[self.index+1] === 'undefined')
+          self.index = 0;        
+      });      
     }
+  }
+
+  _showResult(type, callback)
+  {
+    let self = this;
+    self.response = type;
+    self.show_response = true;
+
+    window.setTimeout(function()
+    {
+      callback();
+      self.show_response = false;
+    }, 1 * 1500);    
   }
 
   constructor()
   {
     super();
     let self = this;
+    self.show_response = false;
 
     this.addEventListener('matematika-game-exec', function (e)
     {
