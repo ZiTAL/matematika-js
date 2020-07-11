@@ -14,3 +14,7 @@ zerbitzaridxe martxan imintzeko, php derrigorrezkue:
 ```
 bash server.sh
 ```
+
+Martxan ikusteko:
+
+http://zital-pi.no-ip.org/matematika/
