@@ -13,7 +13,6 @@ class MatematikaMenu extends LitElement
   }    
   render()
   {
-      var self = this;
       if(this.display==='true')
       {
         let self = this;
@@ -41,6 +40,10 @@ class MatematikaMenu extends LitElement
   constructor()
   {
     super();
+    this.addEventListener('matematika-menu-hidde', function(e)
+    {
+      this.display = 'false';
+    });    
   }
 
   _click(button)

@@ -46,20 +46,21 @@ class Matematika extends LitElement {
     this.game = document.querySelector('matematika-game', this);
   }
 
+  setMenu()
+  {
+    this.menu = document.querySelector('matematika-menu', this);
+  }
+
   constructor()
   {
     super();
-    var self = this;
 
     this.setProgressBar();
     this.setGame();
+    this.setMenu();
 
     this.addEventListener('matematika-reset', function(e)
     {
-/*      
-      self.progress_bar.display = 'false';
-      self.game.display = 'false';
-*/
       window.location.reload(true);
     });
 
@@ -93,7 +94,15 @@ class Matematika extends LitElement {
 
         exercises.push(obj);
       }
-      let myEvent = new CustomEvent('matematika-game-exec',
+
+      let myEvent = new CustomEvent('matematika-menu-hidde',
+      { 
+        bubbles: true, 
+        composed: true
+      });      
+      this.menu.dispatchEvent(myEvent);    
+
+      myEvent = new CustomEvent('matematika-game-exec',
       { 
         detail:
         {

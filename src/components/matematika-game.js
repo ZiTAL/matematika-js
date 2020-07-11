@@ -27,40 +27,43 @@ class MatematikaGame extends LitElement
   {
       if(this.display==='true')
       {
-        let exercise = this.exercises[this.index];    
-        return html`
-        <li>
-          <span>${exercise.one}</span>
-          <span>${exercise.operator}</span>
-          <span>${exercise.two}</span>
-          <ul>
-          ${exercise.result.possible_values.map(function(possible_value)
-          {
-            return html`
-              <li><button @click="${function(e){this._check(this.index, possible_value)}}">${possible_value}</button></li>
-            `;
-          })}
-          </ul>
-        </li>
-        `;
+        let exercise = this.exercises[this.index];
+        if(typeof exercise !== 'undefined')
+        {
+          return html`
+          <li>
+            <span>${exercise.one}</span>
+            <span>${exercise.operator}</span>
+            <span>${exercise.two}</span>
+            <ul>
+            ${exercise.result.possible_values.map(function(possible_value)
+            {
+              return html`
+                <li><button @click="${function(e){this._check(this.index, possible_value)}}">${possible_value}</button></li>
+              `;
+            })}
+            </ul>
+          </li>
+          `;
+        }
+        else
+          window.location.reload(true);
       }
   }
 
   _check(index, possible_value)
   {
-    console.log(this.exercises);
     if(this.exercises[index].result.result===possible_value)
     {
       this.exercises.splice(index, 1);
       this.exercises = [...this.exercises];
     }
     else
-      this._next();
-  }
-
-  _next()
-  {
-    this.index++;
+    {
+      this.index++;
+      if(typeof this.exercises[this.index+1] === 'undefined')
+        this.index = 0;
+    }
   }
 
   constructor()
