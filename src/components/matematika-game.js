@@ -121,9 +121,10 @@ class MatematikaGame extends LitElement
     {
       self._showResult(false, function()
       {
-        self.index++;
         if(typeof self.exercises[self.index+1] === 'undefined')
-          self.index = 0;        
+          self.index = 0;
+        else
+          self.index++;
       });      
     }
   }
