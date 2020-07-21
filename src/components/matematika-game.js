@@ -115,6 +115,8 @@ class MatematikaGame extends LitElement
       {
         self.exercises.splice(index, 1);
         self.exercises = [...self.exercises];
+        if(typeof self.exercises[self.index] === 'undefined')
+          self.index = 0;
       });
     }
     else
