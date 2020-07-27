@@ -8,6 +8,10 @@ class MatematikaMenu extends LitElement
       display:
       {
         type: String
+      },
+      amount:
+      {
+        type: Number
       }
     }
   }    
@@ -26,6 +30,18 @@ class MatematikaMenu extends LitElement
         {
           font-size: 5em;
         }          
+        :host > p
+        {
+          text-align:center;
+          width: 80%;
+          margin: auto;
+          list-style-type: none;
+          font-size: 1em;
+        }                
+        :host > p > select
+        {
+          font-size: 1em;
+        }                        
         :host > ul
         {
           width: 80%;
@@ -45,6 +61,14 @@ class MatematikaMenu extends LitElement
           font-size: 2em;
         }        
       </style>
+      <p>
+        <span>Erantzun kopurua: </span>
+        <select @change="${function(e){self._change(e)}}">
+          <option value="1">2</option>
+          <option value="2">3</option>
+          <option value="3">4</option>
+        </select>
+      </p>
       <ul>
           ${numbers.map(function(number)
           {
@@ -59,21 +83,33 @@ class MatematikaMenu extends LitElement
   constructor()
   {
     super();
+    this.amount = 1;
+
     this.addEventListener('matematika-menu-hidde', function(e)
     {
       this.display = 'false';
     });    
   }
 
+  _change(select)
+  {
+    select.preventDefault();
+    console.log(select.target);
+    this.amount = window.parseInt(select.target.value);
+    console.log(this.amount); 
+  }
+
   _click(button)
   {
     button.preventDefault();
-    var game = button.target.innerText;
+    let game = button.target.innerText;
+    let amount = this.amount;
 
     let myEvent = new CustomEvent('matematika-create',
     { 
       detail:
       {
+        amount: amount,
         game: game
       },
       bubbles: true, 

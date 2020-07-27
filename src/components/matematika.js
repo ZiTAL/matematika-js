@@ -88,6 +88,8 @@ class Matematika extends LitElement {
     {
       let exercises = [];
       let v = e.detail.game;
+      let amount = e.detail.amount;
+      console.log(amount);
       if(v==='nahastea')
       {
         let operator = '*';
@@ -116,7 +118,7 @@ class Matematika extends LitElement {
                     let a = RandomNearNumbers(
                     {
                         value: result,
-                        amount: 2
+                        amount: amount
                     });        
             
                     obj =
@@ -148,7 +150,7 @@ class Matematika extends LitElement {
           a = RandomNearNumbers(
           {
             value: result,
-            amount: 2
+            amount: amount
           });
   
           obj =

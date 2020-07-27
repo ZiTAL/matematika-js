@@ -141,7 +141,7 @@ class MatematikaGame extends LitElement
     {
       callback();
       self.show_response = false;
-    }, 1 * 1500);    
+    }, 1 * 1000);    
   }
 
   constructor()
