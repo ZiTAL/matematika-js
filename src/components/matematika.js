@@ -96,39 +96,39 @@ class Matematika extends LitElement {
         for(let i=0; i<10; i++)
         {
             let one, two, result, obj = {}, valid_result = false;
+
             do
             {
-                one = RandomNearNumbers(
+              one = RandomNearNumbers(
+              {
+                  min: 2,
+                  max: 10
+              });
+              
+              two = RandomNearNumbers(
+              {
+                  min: 2,
+                  max: 10
+              });              
+              result = new Function("return "+one + operator +two)();
+      
+              valid_result = this.isValidResult(result);
+              if(valid_result)
+              {
+                let a = RandomNearNumbers(
                 {
-                    min: 0,
-                    max: 10
-                });
-            
-                two = RandomNearNumbers(
-                {
-                    min: 0,
-                    max: 10
-                });
+                    value: result,
+                    amount: amount
+                });        
         
-                result = new Function("return "+one + operator +two)();
-        
-                valid_result = this.isValidResult(result);
-                if(valid_result)
+                obj =
                 {
-                    let a = RandomNearNumbers(
-                    {
-                        value: result,
-                        amount: amount
-                    });        
-            
-                    obj =
-                    {
-                        one: one,
-                        operator: operator,
-                        two: two,
-                        result: a
-                    };                    
-                }
+                    one: one,
+                    operator: operator,
+                    two: two,
+                    result: a
+                };                    
+              }
             }
             while(this.exerciseExist(obj, exercises) || !valid_result)
             exercises.push(obj);

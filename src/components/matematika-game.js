@@ -102,7 +102,7 @@ class MatematikaGame extends LitElement
           `;
         }
         else
-          window.location.reload(true);
+          window.location.reload();
       }
   }
 
