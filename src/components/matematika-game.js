@@ -78,9 +78,9 @@ class MatematikaGame extends LitElement
           <div>
             <ul>
               <li>
-                <span>${exercise.one}</span>
-                <span>${exercise.operator}</span>
                 <span>${exercise.two}</span>
+                <span>${exercise.operator}</span>
+                <span>${exercise.one}</span>
                 <span> = ? </span>
               </li>
             </ul>
