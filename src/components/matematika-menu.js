@@ -94,9 +94,7 @@ class MatematikaMenu extends LitElement
   _change(select)
   {
     select.preventDefault();
-    console.log(select.target);
     this.amount = window.parseInt(select.target.value);
-    console.log(this.amount); 
   }
 
   _click(button)

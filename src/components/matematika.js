@@ -89,7 +89,7 @@ class Matematika extends LitElement {
       let exercises = [];
       let v = e.detail.game;
       let amount = e.detail.amount;
-      console.log(amount);
+
       if(v==='nahastea')
       {
         let operator = '*';
@@ -109,7 +109,8 @@ class Matematika extends LitElement {
               {
                   min: 2,
                   max: 10
-              });              
+              });           
+   
               result = new Function("return "+one + operator +two)();
       
               valid_result = this.isValidResult(result);
