@@ -64,9 +64,10 @@ class MatematikaMenu extends LitElement
       <p>
         <span>Erantzun kopurua: </span>
         <select @change="${function(e){self._change(e)}}">
-          <option value="1">2</option>
-          <option value="2">3</option>
-          <option value="3">4</option>
+          ${[1,2,3].map(function(i)
+          {
+            return html`<option value="${i}">${i+1}</option>`;
+          })}
         </select>
       </p>
       <ul>

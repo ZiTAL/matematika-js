@@ -137,10 +137,10 @@ class Matematika extends LitElement {
       }
       else
       {
-        let one = window.parseInt(v);
+        let two = window.parseInt(v);
         for (let j = 0; j < 11; j++)
         {
-          let two = j;
+          let one = j;
           let operator = '*';
           let result;
           let obj = {};
