@@ -5,7 +5,7 @@ import "./matematika-game.js"
 
 import RandomNearNumbers from "../lib/random-near-numbers.js";
 
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 
 class Matematika extends LitElement {
   static get properties() {

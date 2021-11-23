@@ -8,13 +8,12 @@
     "build": "./package.sh && webpack --mode=production"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "zital",
+  "license": "GPL",
   "dependencies": {
-    "install": "^0.13.0",
-    "lit-element": "^2.3.1",
+    "lit": "^2.0.2",
     "normalize.css": "^8.0.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
   }
 }
