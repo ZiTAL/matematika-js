@@ -1,1 +1,1 @@
-import "./components/matematika.js";
+import "./components/matematika.js"

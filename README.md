@@ -10,7 +10,7 @@ npm run watch
 npm run build
 ```
 
-zerbitzaridxe martxan imintzeko, php derrigorrezkue:
+frogatuteko zerbitzaridxe martxan imintzeko, php derrigorrezkue:
 ```
 bash server.sh
 ```
