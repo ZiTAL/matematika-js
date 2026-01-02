@@ -17,4 +17,4 @@ bash server.sh
 
 Martxan ikusteko:
 
-http://zital-pi.no-ip.org/matematika/
+https://matematika-js.zital.eus/
